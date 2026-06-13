@@ -1,0 +1,20 @@
+[project]
+name = "close-challenge"
+version = "0.1.0"
+description = "Close 'Build With Us' challenge solver"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31"]
+
+[dependency-groups]
+dev = ["pytest>=8", "responses>=0.25", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+addopts = "-m 'not live'"
+markers = ["live: hits the real Close endpoint (opt-in, network)"]
+
+[tool.ruff]
+line-length = 88
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
